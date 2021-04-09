@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hello_async.views import index, async_view, sync_view
+from hello_async.views import index, async_view, sync_view, smoke_some_meats, burn_some_meats, async_with_sync_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path("async/", async_view),
     path("sync/", sync_view),
+    path("smoke_some_meats/", smoke_some_meats),
+    path("burn_some_meats/", burn_some_meats),
+    path("sync_to_async/", async_with_sync_view),
 ]
